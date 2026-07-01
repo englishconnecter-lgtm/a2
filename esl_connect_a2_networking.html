@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ESL Connect - Networking | A2 Business English</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0b2f5b;--blue:#123f73;--yellow:#f4d35e;--bg:#f4f7fb;--card:#fff;
+  --soft:#f8fbff;--text:#1f2937;--muted:#5f6b7a;--border:#d9e2ef;
+  --green:#1f8a5b;--green-soft:#e8f7ee;--red:#b42318;--red-soft:#fff1f1
+}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+.top-banner{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;border-bottom:6px solid var(--yellow);padding:20px max(22px,calc((100vw - 1120px)/2 + 22px)) 24px}
+.banner-inner{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:94px 1fr;gap:18px;align-items:center}
+.logo{width:88px;height:88px;background:#fff;border:3px solid #fff9c4;border-radius:12px;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,.18)}
+.logo span{color:var(--navy);font-weight:800;font-size:14px;line-height:1.05;text-align:center}
+.top-banner h1{font-size:34px;line-height:1.1;margin-bottom:6px}
+.top-banner p{color:#e8eef8;font-size:16px;max-width:800px}
+.outer{max-width:1120px;margin:22px auto;padding:0 16px}
+.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:18px;margin-bottom:18px}
+.hero-img{min-height:310px;border-radius:18px;overflow:hidden;background:linear-gradient(135deg,rgba(11,47,91,.45),rgba(18,63,115,.15)),url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;border:1px solid var(--border);box-shadow:0 8px 24px rgba(11,47,91,.08)}
+.hero-copy{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:22px;box-shadow:0 8px 24px rgba(11,47,91,.08);display:flex;flex-direction:column;justify-content:center}
+.eyebrow,.section-header{display:inline-block;align-self:flex-start;background:#fff9c4;color:var(--navy);border:1px solid var(--yellow);border-radius:999px;padding:6px 12px;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
+.hero-copy h2,.section-title{color:var(--navy);font-size:28px;line-height:1.15;margin-bottom:10px}
+.hero-copy p,.section-sub{color:var(--muted);margin-bottom:18px}
+.stats{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.stat{background:var(--soft);border:1px solid var(--border);border-radius:12px;padding:9px 11px;font-size:12px;color:var(--muted)}
+.stat strong{display:block;color:var(--text);font-size:14px}
+.lesson{background:var(--card);border:1px solid var(--border);border-radius:18px;box-shadow:0 8px 24px rgba(11,47,91,.08);padding:24px}
+.toolbar{background:#fff;border:1px solid var(--border);border-radius:14px;padding:12px;margin-bottom:22px;box-shadow:0 3px 12px rgba(18,63,115,.08)}
+.progress-track{width:100%;height:9px;border-radius:999px;background:#eef3f9;overflow:hidden;margin-bottom:12px;border:1px solid rgba(6,20,42,.08)}
+.progress-fill{height:100%;width:0;background:var(--navy);transition:width .2s ease}
+.shortcuts{display:flex;flex-wrap:wrap;gap:8px}
+.shortcut{border:1px solid var(--navy);background:var(--navy);color:#fff;border-radius:10px;padding:8px 10px;font-size:13px;font-weight:700;cursor:pointer}
+.shortcut.active{background:var(--yellow);color:var(--navy);border-color:var(--yellow)}
+.section{display:none}.section.active{display:block}
+.card,.card-muted,.role-card{border:1px solid var(--border);border-radius:14px;padding:16px 18px;margin-bottom:14px}
+.card{background:#fff}.card-muted,.role-card{background:var(--soft)}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+ul{padding-left:20px}li{margin-bottom:6px}
+.table{width:100%;border-collapse:collapse;margin:12px 0 16px;font-size:14px}
+.table th,.table td{border:1px solid var(--border);padding:10px;text-align:left}
+.table th{background:var(--soft);color:var(--navy)}
+.q{border:1px solid var(--border);border-radius:14px;padding:14px 16px;margin-bottom:12px;background:#fff}
+.q label:first-child{font-weight:700;display:block;margin-bottom:8px}
+.answer-options{display:grid;grid-template-columns:1fr;gap:8px}
+.answer-options label{border:1px solid var(--border);border-radius:12px;padding:9px 10px;cursor:pointer;background:var(--soft);font-weight:400!important}
+.answer-options input{width:auto;margin-right:6px}
+.answer-options label.option-correct{background:var(--green-soft)!important;border-color:var(--green)!important;color:#145c3d!important}
+.answer-options label.option-wrong{background:var(--red-soft)!important;border-color:var(--red)!important;color:#7a1b12!important}
+.q.correct{border-color:var(--green)}.q.incorrect{border-color:var(--red)}
+.btn-row{display:flex;flex-wrap:wrap;gap:18px;margin:18px 0 12px;align-items:center}
+.action{background:var(--navy);color:#fff;border:1px solid var(--navy);border-radius:10px;padding:10px 15px;cursor:pointer;font-weight:700}
+.action.secondary{background:#fff;color:var(--navy)}
+.action.reset{background:#5f6b7a;border-color:#5f6b7a}
+.action:hover{background:var(--yellow);color:var(--navy);border-color:var(--yellow)}
+.feedback{margin-top:8px;padding:10px 12px;border-radius:12px;font-weight:700;display:none}
+.feedback.ok{display:block;background:var(--green-soft);color:#145c3d;border:1px solid var(--green)}
+.feedback.bad{display:block;background:var(--red-soft);color:#7a1b12;border:1px solid var(--red)}
+.drop-zone{min-height:42px;border:2px dashed #b9c7d8;border-radius:12px;padding:10px;background:#fff;color:var(--muted)}
+.drop-zone.filled{border-style:solid;color:var(--text)}
+.drag-bank{background:var(--soft);border:1px solid var(--border);border-radius:14px;padding:14px;margin-bottom:14px}
+.drag-chip{display:inline-block;background:var(--navy);color:#fff;border-radius:999px;padding:8px 11px;margin:5px;cursor:grab;font-weight:700;font-size:13px}
+textarea,input[type=text]{width:100%;border:1px solid var(--border);border-radius:12px;padding:10px;min-height:44px;font-family:Arial,Helvetica,sans-serif;font-size:14px}
+textarea{min-height:86px}
+.role-card strong{display:block;color:var(--navy);margin-bottom:6px}
+.footer{margin:26px auto 0;padding:18px 20px;text-align:center;background:var(--navy);color:#fff;border-top:5px solid var(--yellow)}
+.footer a{color:var(--yellow);font-weight:700;text-decoration:none}.footer a:hover{text-decoration:underline}
+@media(max-width:760px){.banner-inner,.hero,.grid-2{grid-template-columns:1fr}.top-banner{padding:20px 22px 24px}.top-banner h1{font-size:28px}.hero-img{min-height:230px}.lesson{padding:18px}.btn-row{gap:12px}}
+</style>
+</head>
+<body>
+<header class="top-banner">
+  <div class="banner-inner">
+    <a class="logo" href="https://www.eslconnect.net/" target="_blank" rel="noopener"><span>ESL<br>CONNECT</span></a>
+    <div>
+      <h1>Networking</h1>
+      <p>An A2 Business English lesson for meeting new people, introducing yourself, asking simple questions and ending a conversation politely.</p>
+    </div>
+  </div>
+</header>
+
+<main class="outer">
+  <section class="hero">
+    <div class="hero-img" role="img" aria-label="People networking at a professional event"></div>
+    <div class="hero-copy">
+      <span class="eyebrow">A2 Business English</span>
+      <h2>Meet people with confidence</h2>
+      <p>Students learn simple language for professional introductions, small talk, exchanging details and following up.</p>
+      <div class="stats">
+        <div class="stat"><strong>Level</strong>A2</div>
+        <div class="stat"><strong>Time</strong>60–75 minutes</div>
+        <div class="stat"><strong>Focus</strong>Networking & introductions</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lesson">
+    <nav class="toolbar">
+      <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+      <div class="shortcuts" id="navButtons"></div>
+    </nav>
+
+    <section class="section active" data-title="Start">
+      <div class="section-header">Start</div>
+      <h2 class="section-title">Lesson overview</h2>
+      <p class="section-sub">Students practise short conversations for networking events and professional situations.</p>
+      <div class="card">
+        <h3>Lesson aims</h3>
+        <ul>
+          <li>Introduce yourself clearly.</li>
+          <li>Ask simple questions about work and interests.</li>
+          <li>Use polite phrases to agree, respond and continue a conversation.</li>
+          <li>End a networking conversation naturally.</li>
+        </ul>
+      </div>
+      <div class="grid-2">
+        <div class="card-muted">
+          <h3>Warm-up questions</h3>
+          <ul>
+            <li>Do you like meeting new people?</li>
+            <li>Where can people network?</li>
+            <li>What is a good first question?</li>
+          </ul>
+        </div>
+        <div class="card-muted">
+          <h3>Key idea</h3>
+          <p>Networking means meeting people, making professional connections and starting useful conversations.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" data-title="Reading">
+      <div class="section-header">Reading Comprehension</div>
+      <h2 class="section-title">What is networking?</h2>
+      <p class="section-sub">Read the text and answer the questions.</p>
+      <div class="card">
+        <p>Networking is when you meet people and make professional connections. You can network at conferences, meetings, training days, company events or online.</p>
+        <p>A good networking conversation is usually short and polite. First, you introduce yourself. Then, you ask simple questions. You can ask about a person’s job, company or reason for attending the event.</p>
+        <p>It is important to listen carefully. Good networking is not only talking about yourself. It is also showing interest in the other person.</p>
+        <p>At the end of the conversation, you can exchange contact details or say that it was nice to meet them. Later, you can send a short follow-up message.</p>
+      </div>
+      <h3>Choose the correct answer</h3>
+      <div class="q option-q" data-answer="meeting people and making professional connections"><label>1. Networking means...</label><div class="answer-options"><label><input type="radio" name="read1" value="only speaking to friends"> only speaking to friends</label><label><input type="radio" name="read1" value="meeting people and making professional connections"> meeting people and making professional connections</label><label><input type="radio" name="read1" value="working alone at home"> working alone at home</label></div></div>
+      <div class="q option-q" data-answer="short and polite"><label>2. A good networking conversation is usually...</label><div class="answer-options"><label><input type="radio" name="read2" value="long and difficult"> long and difficult</label><label><input type="radio" name="read2" value="only about yourself"> only about yourself</label><label><input type="radio" name="read2" value="short and polite"> short and polite</label></div></div>
+      <div class="q option-q" data-answer="listen carefully"><label>3. It is important to...</label><div class="answer-options"><label><input type="radio" name="read3" value="listen carefully"> listen carefully</label><label><input type="radio" name="read3" value="interrupt often"> interrupt often</label><label><input type="radio" name="read3" value="ignore the other person"> ignore the other person</label></div></div>
+      <div class="btn-row"><button class="action" onclick="checkSelectGroup(this)">Check answers</button><button class="action secondary" onclick="revealGroup(this)">Reveal answers</button></div><div class="feedback"></div>
+    </section>
+
+    <section class="section" data-title="Vocabulary">
+      <div class="section-header">Stage 2 — Vocabulary</div>
+      <h2 class="section-title">Networking words</h2>
+      <p class="section-sub">10 minutes · Drag and drop the correct words into the sentences.</p>
+      <aside class="drag-bank">
+        <strong>Answer choices</strong><br>
+        <span class="drag-chip" draggable="true" ondragstart="dragAnswer(event)" data-value="introduce">introduce</span>
+        <span class="drag-chip" draggable="true" ondragstart="dragAnswer(event)" data-value="connection">connection</span>
+        <span class="drag-chip" draggable="true" ondragstart="dragAnswer(event)" data-value="event">event</span>
+        <span class="drag-chip" draggable="true" ondragstart="dragAnswer(event)" data-value="contact details">contact details</span>
+        <span class="drag-chip" draggable="true" ondragstart="dragAnswer(event)" data-value="follow up">follow up</span>
+        <span class="drag-chip" draggable="true" ondragstart="dragAnswer(event)" data-value="colleague">colleague</span>
+      </aside>
+      <div class="q drag-q" data-answer="introduce"><label>1. At the start, you can __________ yourself.</label><div class="drop-zone" ondragover="allowDrop(event)" ondrop="dropAnswer(event)">Drop answer here</div></div>
+      <div class="q drag-q" data-answer="event"><label>2. A conference is a professional __________.</label><div class="drop-zone" ondragover="allowDrop(event)" ondrop="dropAnswer(event)">Drop answer here</div></div>
+      <div class="q drag-q" data-answer="connection"><label>3. Networking helps you make a new professional __________.</label><div class="drop-zone" ondragover="allowDrop(event)" ondrop="dropAnswer(event)">Drop answer here</div></div>
+      <div class="q drag-q" data-answer="contact details"><label>4. Your email and phone number are your __________.</label><div class="drop-zone" ondragover="allowDrop(event)" ondrop="dropAnswer(event)">Drop answer here</div></div>
+      <div class="q drag-q" data-answer="follow up"><label>5. After the event, you can __________ with a short email.</label><div class="drop-zone" ondragover="allowDrop(event)" ondrop="dropAnswer(event)">Drop answer here</div></div>
+      <div class="q drag-q" data-answer="colleague"><label>6. A person you work with is a __________.</label><div class="drop-zone" ondragover="allowDrop(event)" ondrop="dropAnswer(event)">Drop answer here</div></div>
+      <div class="btn-row"><button class="action" onclick="checkDragGroup(this)">Check answers</button><button class="action secondary" onclick="revealDragAnswers(this)">Reveal answers</button><button class="action reset" onclick="resetDragGroup(this)">Reset</button></div><div class="feedback"></div>
+    </section>
+
+    <section class="section" data-title="Dialogue">
+      <div class="section-header">Dialogue</div>
+      <h2 class="section-title">At a networking event</h2>
+      <p class="section-sub">Read and practise the dialogue.</p>
+      <div class="card">
+        <p><strong>Anna:</strong> Hi, I’m Anna. Nice to meet you.</p>
+        <p><strong>Ben:</strong> Nice to meet you too. I’m Ben.</p>
+        <p><strong>Anna:</strong> What do you do?</p>
+        <p><strong>Ben:</strong> I work in marketing. How about you?</p>
+        <p><strong>Anna:</strong> I’m a project assistant. I help organise events.</p>
+        <p><strong>Ben:</strong> That sounds interesting. Is this your first time at this event?</p>
+        <p><strong>Anna:</strong> Yes, it is. What about you?</p>
+        <p><strong>Ben:</strong> I came last year too. It was very useful.</p>
+        <p><strong>Anna:</strong> Great. Can I have your email?</p>
+        <p><strong>Ben:</strong> Of course. Let’s stay in touch.</p>
+      </div>
+      <h3>Comprehension</h3>
+      <div class="q option-q" data-answer="marketing"><label>1. Ben works in...</label><div class="answer-options"><label><input type="radio" name="dia1" value="marketing"> marketing</label><label><input type="radio" name="dia1" value="finance"> finance</label><label><input type="radio" name="dia1" value="medicine"> medicine</label></div></div>
+      <div class="q option-q" data-answer="project assistant"><label>2. Anna is a...</label><div class="answer-options"><label><input type="radio" name="dia2" value="project assistant"> project assistant</label><label><input type="radio" name="dia2" value="doctor"> doctor</label><label><input type="radio" name="dia2" value="teacher"> teacher</label></div></div>
+      <div class="q option-q" data-answer="Ben's email"><label>3. Anna asks for...</label><div class="answer-options"><label><input type="radio" name="dia3" value="Ben's email"> Ben's email</label><label><input type="radio" name="dia3" value="a coffee"> a coffee</label><label><input type="radio" name="dia3" value="a meeting room"> a meeting room</label></div></div>
+      <div class="btn-row"><button class="action" onclick="checkSelectGroup(this)">Check answers</button><button class="action secondary" onclick="revealGroup(this)">Reveal answers</button></div><div class="feedback"></div>
+    </section>
+
+    <section class="section" data-title="Grammar">
+      <div class="section-header">Grammar</div>
+      <h2 class="section-title">Present simple questions</h2>
+      <p class="section-sub">Use present simple questions to ask about work and routines.</p>
+      <div class="card-muted">
+        <p><strong>Question:</strong> What do you do?</p>
+        <p><strong>Answer:</strong> I work in marketing. / I’m a project assistant.</p>
+        <p><strong>Question:</strong> Do you often come to events like this?</p>
+        <p><strong>Answer:</strong> Yes, I do. / No, I don’t.</p>
+      </div>
+      <h3>Project English grammar drill</h3>
+      <div class="q option-q" data-answer="What do you do?"><label>1. Choose the correct question.</label><div class="answer-options"><label><input type="radio" name="gram1" value="What you do?"> What you do?</label><label><input type="radio" name="gram1" value="What do you do?"> What do you do?</label><label><input type="radio" name="gram1" value="What does you do?"> What does you do?</label></div></div>
+      <div class="q option-q" data-answer="Do you work in sales?"><label>2. Choose the correct question.</label><div class="answer-options"><label><input type="radio" name="gram2" value="Do you work in sales?"> Do you work in sales?</label><label><input type="radio" name="gram2" value="You work in sales?"> You work in sales?</label><label><input type="radio" name="gram2" value="Does you work in sales?"> Does you work in sales?</label></div></div>
+      <div class="q option-q" data-answer="Where do you work?"><label>3. Choose the correct question.</label><div class="answer-options"><label><input type="radio" name="gram3" value="Where do you work?"> Where do you work?</label><label><input type="radio" name="gram3" value="Where you work?"> Where you work?</label><label><input type="radio" name="gram3" value="Where does you work?"> Where does you work?</label></div></div>
+      <div class="btn-row"><button class="action" onclick="checkSelectGroup(this)">Check answers</button><button class="action secondary" onclick="revealGroup(this)">Reveal answers</button></div><div class="feedback"></div>
+    </section>
+
+    <section class="section" data-title="Functional Language">
+      <div class="section-header">Functional Language</div>
+      <h2 class="section-title">Networking phrases</h2>
+      <p class="section-sub">Useful phrases for starting, continuing and ending a conversation.</p>
+      <table class="table">
+        <tr><th>Function</th><th>Phrase</th></tr>
+        <tr><td>Introduce yourself</td><td>Hi, I’m Anna. Nice to meet you.</td></tr>
+        <tr><td>Ask about work</td><td>What do you do?</td></tr>
+        <tr><td>Show interest</td><td>That sounds interesting.</td></tr>
+        <tr><td>Ask a follow-up question</td><td>How about you?</td></tr>
+        <tr><td>Exchange details</td><td>Can I have your email?</td></tr>
+        <tr><td>End politely</td><td>It was nice to meet you.</td></tr>
+      </table>
+      <h3>Choose the best phrase</h3>
+      <div class="q option-q" data-answer="Nice to meet you."><label>1. You meet someone for the first time.</label><div class="answer-options"><label><input type="radio" name="func1" value="Nice to meet you."> Nice to meet you.</label><label><input type="radio" name="func1" value="Where is my chair?"> Where is my chair?</label><label><input type="radio" name="func1" value="I don't like meetings."> I don't like meetings.</label></div></div>
+      <div class="q option-q" data-answer="That sounds interesting."><label>2. You want to show interest.</label><div class="answer-options"><label><input type="radio" name="func2" value="That sounds interesting."> That sounds interesting.</label><label><input type="radio" name="func2" value="I am the email."> I am the email.</label><label><input type="radio" name="func2" value="This is very chair."> This is very chair.</label></div></div>
+      <div class="q option-q" data-answer="It was nice to meet you."><label>3. You want to end the conversation politely.</label><div class="answer-options"><label><input type="radio" name="func3" value="It was nice to meet you."> It was nice to meet you.</label><label><input type="radio" name="func3" value="Stop talking now."> Stop talking now.</label><label><input type="radio" name="func3" value="I go away."> I go away.</label></div></div>
+      <div class="btn-row"><button class="action" onclick="checkSelectGroup(this)">Check answers</button><button class="action secondary" onclick="revealGroup(this)">Reveal answers</button></div><div class="feedback"></div>
+    </section>
+
+    <section class="section" data-title="Speaking">
+      <div class="section-header">Speaking</div>
+      <h2 class="section-title">Networking role cards</h2>
+      <p class="section-sub">Choose a card. Meet your partner and have a short networking conversation.</p>
+      <div class="grid-2">
+        <div class="role-card"><strong>Card A: Marketing Assistant</strong><p>You work for a small fashion company. You want to meet people who organise events.</p><p><strong>Useful question:</strong> What kind of events do you organise?</p></div>
+        <div class="role-card"><strong>Card B: Project Assistant</strong><p>You help teams plan projects. You want to find new business contacts.</p><p><strong>Useful question:</strong> What projects are you working on now?</p></div>
+        <div class="role-card"><strong>Card C: Sales Trainee</strong><p>You are new in your company. You want to practise introducing yourself.</p><p><strong>Useful question:</strong> Is this your first time at this event?</p></div>
+        <div class="role-card"><strong>Card D: Event Coordinator</strong><p>You organise business events. You want to exchange contact details.</p><p><strong>Useful question:</strong> Can I have your email?</p></div>
+      </div>
+      <div class="card-muted">
+        <h3>Conversation checklist</h3>
+        <ul>
+          <li>Introduce yourself.</li>
+          <li>Ask what the other person does.</li>
+          <li>Ask one follow-up question.</li>
+          <li>Show interest.</li>
+          <li>End politely.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" data-title="Review">
+      <div class="section-header">Review</div>
+      <h2 class="section-title">Final review</h2>
+      <p class="section-sub">Check the key language from the lesson.</p>
+      <div class="q option-q" data-answer="What do you do?"><label>1. Ask about someone's job.</label><div class="answer-options"><label><input type="radio" name="rev1" value="What do you do?"> What do you do?</label><label><input type="radio" name="rev1" value="Where is the table?"> Where is the table?</label><label><input type="radio" name="rev1" value="Who is coffee?"> Who is coffee?</label></div></div>
+      <div class="q option-q" data-answer="Can I have your email?"><label>2. Ask for contact details.</label><div class="answer-options"><label><input type="radio" name="rev2" value="Can I have your email?"> Can I have your email?</label><label><input type="radio" name="rev2" value="I am email."> I am email.</label><label><input type="radio" name="rev2" value="You are contact."> You are contact.</label></div></div>
+      <div class="q option-q" data-answer="Let's stay in touch."><label>3. Choose a good final phrase.</label><div class="answer-options"><label><input type="radio" name="rev3" value="Let's stay in touch."> Let's stay in touch.</label><label><input type="radio" name="rev3" value="No conversation."> No conversation.</label><label><input type="radio" name="rev3" value="I stop."> I stop.</label></div></div>
+      <div class="btn-row"><button class="action" onclick="checkSelectGroup(this)">Check answers</button><button class="action secondary" onclick="revealGroup(this)">Reveal answers</button></div><div class="feedback"></div>
+    </section>
+  </section>
+</main>
+
+<footer class="footer">ESL Connect - <a href="mailto:englishconnecter@gmail.com">Contact Us</a></footer>
+
+<script>
+const sections=[...document.querySelectorAll('.section')],nav=document.getElementById('navButtons'),fill=document.getElementById('progressFill');let current=0;
+sections.forEach((sec,i)=>{const b=document.createElement('button');b.className='shortcut'+(i===0?' active':'');b.textContent=sec.dataset.title;b.onclick=()=>showSection(i);nav.appendChild(b)});
+function showSection(i){current=i;sections.forEach((s,idx)=>s.classList.toggle('active',idx===i));document.querySelectorAll('.shortcut').forEach((b,idx)=>b.classList.toggle('active',idx===i));fill.style.width=((i+1)/sections.length*100)+'%';window.scrollTo({top:0,behavior:'smooth'})}
+showSection(0);
+function checkSelectGroup(btn){const container=btn.closest('.section');const qs=[...container.querySelectorAll('.option-q')];let score=0;qs.forEach(q=>{q.classList.remove('correct','incorrect');const correct=q.dataset.answer;q.querySelectorAll('.answer-options label').forEach(label=>label.classList.remove('option-correct','option-wrong'));const checked=q.querySelector('input[type=radio]:checked');if(checked){const lab=checked.closest('label');if(checked.value===correct){score++;q.classList.add('correct');lab.classList.add('option-correct')}else{q.classList.add('incorrect');lab.classList.add('option-wrong')}}else{q.classList.add('incorrect')}});const fb=container.querySelector('.feedback');if(fb){fb.textContent=`${score}/${qs.length} correct.`;fb.className='feedback '+(score===qs.length?'ok':'bad')}}
+function revealGroup(btn){const container=btn.closest('.section');const qs=[...container.querySelectorAll('.option-q')];qs.forEach(q=>{q.classList.remove('incorrect');q.classList.add('correct');const correct=q.dataset.answer;q.querySelectorAll('.answer-options label').forEach(label=>{label.classList.remove('option-correct','option-wrong');const input=label.querySelector('input[type=radio]');if(input&&input.value===correct){label.classList.add('option-correct')}})});const fb=container.querySelector('.feedback');if(fb){fb.textContent='Correct options are highlighted in green.';fb.className='feedback ok'}}
+function enableInstantOptionFeedback(){document.querySelectorAll('.option-q').forEach(q=>{const correct=q.dataset.answer;q.querySelectorAll('.answer-options label').forEach(label=>{const input=label.querySelector('input[type=radio]');if(!input)return;input.addEventListener('change',()=>{q.querySelectorAll('.answer-options label').forEach(l=>l.classList.remove('option-correct','option-wrong'));q.classList.remove('correct','incorrect');if(input.value===correct){label.classList.add('option-correct');q.classList.add('correct')}else{label.classList.add('option-wrong');q.classList.add('incorrect')}})})})}
+function dragAnswer(ev){ev.dataTransfer.setData('text/plain',ev.target.dataset.value)}
+function allowDrop(ev){ev.preventDefault()}
+function dropAnswer(ev){ev.preventDefault();const zone=ev.currentTarget,val=ev.dataTransfer.getData('text/plain');zone.dataset.value=val;zone.textContent=val;zone.classList.add('filled');const q=zone.closest('.drag-q');q.classList.remove('correct','incorrect');if(val===q.dataset.answer){q.classList.add('correct');zone.style.background='var(--green-soft)';zone.style.borderColor='var(--green)';zone.style.color='#145c3d'}else{q.classList.add('incorrect');zone.style.background='var(--red-soft)';zone.style.borderColor='var(--red)';zone.style.color='#7a1b12'}}
+function checkDragGroup(btn){const container=btn.closest('.section'),qs=[...container.querySelectorAll('.drag-q')];let score=0;qs.forEach(q=>{const zone=q.querySelector('.drop-zone');q.classList.remove('correct','incorrect');if(zone.dataset.value===q.dataset.answer){score++;q.classList.add('correct');zone.style.background='var(--green-soft)';zone.style.borderColor='var(--green)';zone.style.color='#145c3d'}else{q.classList.add('incorrect');zone.style.background='var(--red-soft)';zone.style.borderColor='var(--red)';zone.style.color='#7a1b12'}});const fb=container.querySelector('.feedback');if(fb){fb.textContent=`${score}/${qs.length} correct.`;fb.className='feedback '+(score===qs.length?'ok':'bad')}}
+function revealDragAnswers(btn){const container=btn.closest('.section');container.querySelectorAll('.drag-q').forEach(q=>{const zone=q.querySelector('.drop-zone');q.classList.remove('incorrect');q.classList.add('correct');zone.dataset.value=q.dataset.answer;zone.textContent=q.dataset.answer;zone.classList.add('filled');zone.style.background='var(--green-soft)';zone.style.borderColor='var(--green)';zone.style.color='#145c3d'});const fb=container.querySelector('.feedback');if(fb){fb.textContent='Correct answers are highlighted in green.';fb.className='feedback ok'}}
+function resetDragGroup(btn){const container=btn.closest('.section');container.querySelectorAll('.drag-q').forEach(q=>{q.classList.remove('correct','incorrect');const zone=q.querySelector('.drop-zone');zone.textContent='Drop answer here';zone.dataset.value='';zone.classList.remove('filled');zone.style.background='';zone.style.borderColor='';zone.style.color=''});const fb=container.querySelector('.feedback');if(fb){fb.textContent='';fb.className='feedback'}}
+enableInstantOptionFeedback();
+</script>
+</body>
+</html>
