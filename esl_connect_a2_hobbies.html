@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ESL Connect - Hobbies | A2 English Lesson</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#0b2f5b;--blue:#123f73;--yellow:#f4d35e;--bg:#f4f7fb;--card:#fff;--soft:#f8fbff;--text:#1f2937;--muted:#5f6b7a;--border:#d9e2ef;--green:#1f8a5b;--green-soft:#e8f7ee;--red:#b42318;--red-soft:#fff1f1}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+.top-banner{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;border-bottom:6px solid var(--yellow);padding:20px max(22px,calc((100vw - 1120px)/2 + 22px)) 24px}
+.banner-inner{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:94px 1fr;gap:18px;align-items:center}
+.logo{width:88px;height:88px;background:#fff;border:3px solid #fff9c4;border-radius:12px;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,.18)}
+.logo span{color:var(--navy);font-weight:800;font-size:14px;line-height:1.05;text-align:center}
+.top-banner h1{font-size:34px;line-height:1.1;margin-bottom:6px}.top-banner p{color:#e8eef8;font-size:16px;max-width:800px}
+.outer{max-width:1120px;margin:22px auto;padding:0 16px}
+.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:18px;margin-bottom:18px}
+.hero-img{min-height:310px;border-radius:18px;overflow:hidden;background:linear-gradient(135deg,rgba(11,47,91,.35),rgba(18,63,115,.12)),url('https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;border:1px solid var(--border);box-shadow:0 8px 24px rgba(11,47,91,.08)}
+.hero-copy{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:22px;box-shadow:0 8px 24px rgba(11,47,91,.08);display:flex;flex-direction:column;justify-content:center}
+.eyebrow,.section-header{display:inline-block;align-self:flex-start;background:#fff9c4;color:var(--navy);border:1px solid var(--yellow);border-radius:999px;padding:6px 12px;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
+.hero-copy h2,.section-title{color:var(--navy);font-size:28px;line-height:1.15;margin-bottom:10px}.hero-copy p,.section-sub{color:var(--muted);margin-bottom:18px}
+.stats{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.stat{background:var(--soft);border:1px solid var(--border);border-radius:12px;padding:9px 11px;font-size:12px;color:var(--muted)}.stat strong{display:block;color:var(--text);font-size:14px}
+.lesson{background:var(--card);border:1px solid var(--border);border-radius:18px;box-shadow:0 8px 24px rgba(11,47,91,.08);padding:24px}
+.toolbar{background:#fff;border:1px solid var(--border);border-radius:14px;padding:12px;margin-bottom:22px;box-shadow:0 3px 12px rgba(18,63,115,.08)}
+.progress-track{width:100%;height:9px;border-radius:999px;background:#eef3f9;overflow:hidden;margin-bottom:12px;border:1px solid rgba(6,20,42,.08)}.progress-fill{height:100%;width:0;background:var(--navy);transition:width .2s ease}
+.shortcuts{display:flex;flex-wrap:wrap;gap:8px}.shortcut{border:1px solid var(--navy);background:var(--navy);color:#fff;border-radius:10px;padding:8px 10px;font-size:13px;font-weight:700;cursor:pointer}.shortcut.active{background:var(--yellow);color:var(--navy);border-color:var(--yellow)}
+.section{display:none}.section.active{display:block}
+.card,.card-muted,.role-card{border:1px solid var(--border);border-radius:14px;padding:16px 18px;margin-bottom:14px}.card{background:#fff}.card-muted,.role-card{background:var(--soft)}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}ul{padding-left:20px}li{margin-bottom:6px}
+.table{width:100%;border-collapse:collapse;margin:12px 0 16px;font-size:14px}.table th,.table td{border:1px solid var(--border);padding:10px;text-align:left}.table th{background:var(--soft);color:var(--navy)}
+.q{border:1px solid var(--border);border-radius:14px;padding:14px 16px;margin-bottom:12px;background:#fff}.q label:first-child{font-weight:700;display:block;margin-bottom:8px}
+.answer-options{display:grid;grid-template-columns:1fr;gap:8px}.answer-options label{border:1px solid var(--border);border-radius:12px;padding:9px 10px;cursor:pointer;background:var(--soft);font-weight:400!important}.answer-options input{width:auto;margin-right:6px}
+.answer-options label.option-correct{background:var(--green-soft)!important;border-color:var(--green)!important;color:#145c3d!important}.answer-options label.option-wrong{background:var(--red-soft)!important;border-color:var(--red)!important;color:#7a1b12!important}.q.correct{border-color:var(--green)}.q.incorrect{border-color:var(--red)}
+.btn-row{display:flex;flex-wrap:wrap;gap:18px;margin:18px 0 12px;align-items:center}.action{background:var(--navy);color:#fff;border:1px solid var(--navy);border-radius:10px;padding:10px 15px;cursor:pointer;font-weight:700}.action.secondary{background:#fff;color:var(--navy)}.action.reset{background:#5f6b7a;border-color:#5f6b7a}.action:hover{background:var(--yellow);color:var(--navy);border-color:var(--yellow)}
+.feedback{margin-top:8px;padding:10px 12px;border-radius:12px;font-weight:700;display:none}.feedback.ok{display:block;background:var(--green-soft);color:#145c3d;border:1px solid var(--green)}.feedback.bad{display:block;background:var(--red-soft);color:#7a1b12;border:1px solid var(--red)}
+.drop-zone{min-height:42px;border:2px dashed #b9c7d8;border-radius:12px;padding:10px;background:#fff;color:var(--muted)}.drop-zone.filled{border-style:solid;color:var(--text)}
+.drag-bank{background:var(--soft);border:1px solid var(--border);border-radius:14px;padding:14px;margin-bottom:14px}.drag-chip{display:inline-block;background:var(--navy);color:#fff;border-radius:999px;padding:8px 11px;margin:5px;cursor:grab;font-weight:700;font-size:13px}
+textarea,input[type=text]{width:100%;border:1px solid var(--border);border-radius:12px;padding:10px;min-height:44px;font-family:Arial,Helvetica,sans-serif;font-size:14px}textarea{min-height:86px}.role-card strong{display:block;color:var(--navy);margin-bottom:6px}
+.footer{margin:26px auto 0;padding:18px 20px;text-align:center;background:var(--navy);color:#fff;border-top:5px solid var(--yellow)}.footer a{color:var(--yellow);font-weight:700;text-decoration:none}.footer a:hover{text-decoration:underline}
+@media(max-width:760px){.banner-inner,.hero,.grid-2{grid-template-columns:1fr}.top-banner{padding:20px 22px 24px}.top-banner h1{font-size:28px}.hero-img{min-height:230px}.lesson{padding:18px}.btn-row{gap:12px}}
+</style>
+</head>
+<body>
+<header class="top-banner"><div class="banner-inner"><a class="logo" href="https://www.eslconnect.net/" target="_blank" rel="noopener"><span>ESL<br>CONNECT</span></a><div><h1>Hobbies</h1><p>An A2 English lesson for talking about free-time activities, likes and dislikes, frequency, and making simple plans.</p></div></div></header>
+
+<main class="outer">
+<section class="hero"><div class="hero-img" role="img" aria-label="Friends doing hobbies together"></div><div class="hero-copy"><span class="eyebrow">A2 Everyday English</span><h2>Talk about what you enjoy</h2><p>Students learn how to describe hobbies, ask follow-up questions, and talk about how often they do activities.</p><div class="stats"><div class="stat"><strong>Level</strong>A2</div><div class="stat"><strong>Time</strong>60–75 minutes</div><div class="stat"><strong>Focus</strong>Hobbies & free time</div></div></div></section>
+
+<section class="lesson"><nav class="toolbar"><div class="progress-track"><div class="progress-fill" id="progressFill"></div></div><div class="shortcuts" id="navButtons"></div></nav>
+
+<section class="section active" data-title="Start">
+<div class="section-header">Start</div><h2 class="section-title">Lesson overview</h2><p class="section-sub">Students practise talking about hobbies and asking simple questions about free time.</p>
+<div class="card"><h3>Lesson aims</h3><ul><li>Name common hobbies.</li><li>Talk about likes and dislikes.</li><li>Use frequency adverbs: always, usually, often, sometimes, never.</li><li>Ask and answer questions about hobbies.</li></ul></div>
+<div class="grid-2"><div class="card-muted"><h3>Warm-up questions</h3><ul><li>What do you do in your free time?</li><li>Do you prefer indoor or outdoor hobbies?</li><li>What hobby would you like to try?</li></ul></div><div class="card-muted"><h3>Key idea</h3><p>A hobby is an activity you do because you enjoy it, not because it is work or school.</p></div></div>
+</section>
+
+<section class="section" data-title="Reading">
+<div class="section-header">Reading Comprehension</div><h2 class="section-title">Why are hobbies important?</h2><p class="section-sub">Read the text and answer the questions.</p>
+<div class="card"><p>Hobbies are activities we do in our free time. Some people like creative hobbies, such as painting, cooking or playing music. Other people prefer active hobbies, such as swimming, cycling or playing football.</p><p>Hobbies are important because they help us relax. They can also help us meet new people and learn new skills. For example, if you join a photography club, you can practise taking photos and make friends.</p><p>You do not need a lot of money to have a hobby. Walking, reading, drawing and watching films can be simple and enjoyable hobbies.</p><p>When people talk about hobbies, they often ask questions like “What do you do in your free time?” and “How often do you do it?”</p></div>
+<h3>Choose the correct answer</h3>
+<div class="q option-q" data-answer="in our free time"><label>1. We usually do hobbies...</label><div class="answer-options"><label><input type="radio" name="read1" value="in our free time"> in our free time</label><label><input type="radio" name="read1" value="only at work"> only at work</label><label><input type="radio" name="read1" value="only at school"> only at school</label></div></div>
+<div class="q option-q" data-answer="help us relax"><label>2. Hobbies can...</label><div class="answer-options"><label><input type="radio" name="read2" value="make us late every day"> make us late every day</label><label><input type="radio" name="read2" value="help us relax"> help us relax</label><label><input type="radio" name="read2" value="stop us learning"> stop us learning</label></div></div>
+<div class="q option-q" data-answer="photography club"><label>3. The text gives the example of a...</label><div class="answer-options"><label><input type="radio" name="read3" value="photography club"> photography club</label><label><input type="radio" name="read3" value="bank meeting"> bank meeting</label><label><input type="radio" name="read3" value="job interview"> job interview</label></div></div>
+<div class="btn-row"><button class="action" onclick="checkSelectGroup(this)">Check answers</button><button class="action secondary" onclick="revealGroup(this)">Reveal answers</button></div><div class="feedback"></div>
+</section>
+
+<section class="section" data-title="Vocabulary">
+<div class="section-header">Stage 2 — Vocabulary</div><h2 class="section-title">Hobby words</h2><p class="section-sub">10 minutes · Drag and drop the correct words into the sentences.</p>
+<aside class="drag-bank"><strong>Answer choices</strong><br>
+<span class="drag-chip" draggable="true" ondragstart="dragAnswer(event)" data-value="painting">painting</span>
+<span class="drag-chip" draggable="true" ondragstart="dragAnswer(event)" data-value="cycling">cycling</span>
+<span class="drag-chip" draggable="true" ondragstart="dragAnswer(event)" data-value="cooking">cooking</span>
+<span class="drag-chip" draggable="true" ondragstart="dragAnswer(event)" data-value="reading">reading</span>
+<span class="drag-chip" draggable="true" ondragstart="dragAnswer(event)" data-value="playing music">playing music</span>
+<span class="drag-chip" draggable="true" ondragstart="dragAnswer(event)" data-value="photography">photography</span></aside>
+<div class="q drag-q" data-answer="cooking"><label>1. I like making pasta and cakes. My hobby is __________.</label><div class="drop-zone" ondragover="allowDrop(event)" ondrop="dropAnswer(event)">Drop answer here</div></div>
+<div class="q drag-q" data-answer="cycling"><label>2. I go out on my bike every weekend. I enjoy __________.</label><div class="drop-zone" ondragover="allowDrop(event)" ondrop="dropAnswer(event)">Drop answer here</div></div>
+<div class="q drag-q" data-answer="painting"><label>3. I use colours and brushes. I like __________.</label><div class="drop-zone" ondragover="allowDrop(event)" ondrop="dropAnswer(event)">Drop answer here</div></div>
+<div class="q drag-q" data-answer="reading"><label>4. I love books and stories. My favourite hobby is __________.</label><div class="drop-zone" ondragover="allowDrop(event)" ondrop="dropAnswer(event)">Drop answer here</div></div>
+<div class="q drag-q" data-answer="playing music"><label>5. I practise guitar after school. I like __________.</label><div class="drop-zone" ondragover="allowDrop(event)" ondrop="dropAnswer(event)">Drop answer here</div></div>
+<div class="q drag-q" data-answer="photography"><label>6. I take photos of people and places. I enjoy __________.</label><div class="drop-zone" ondragover="allowDrop(event)" ondrop="dropAnswer(event)">Drop answer here</div></div>
+<div class="btn-row"><button class="action" onclick="checkDragGroup(this)">Check answers</button><button class="action secondary" onclick="revealDragAnswers(this)">Reveal answers</button><button class="action reset" onclick="resetDragGroup(this)">Reset</button></div><div class="feedback"></div>
+</section>
+
+<section class="section" data-title="Dialogue">
+<div class="section-header">Dialogue</div><h2 class="section-title">Talking about hobbies</h2><p class="section-sub">Read and practise the dialogue.</p>
+<div class="card"><p><strong>Mia:</strong> What do you do in your free time?</p><p><strong>Leo:</strong> I usually play football on Saturdays.</p><p><strong>Mia:</strong> Nice. How often do you play?</p><p><strong>Leo:</strong> I play once a week. What about you?</p><p><strong>Mia:</strong> I like painting and taking photos.</p><p><strong>Leo:</strong> That sounds fun. Are you in a club?</p><p><strong>Mia:</strong> Yes, I go to an art club on Wednesdays.</p><p><strong>Leo:</strong> I’d like to try that one day.</p></div>
+<h3>Comprehension</h3>
+<div class="q option-q" data-answer="plays football"><label>1. What does Leo usually do on Saturdays?</label><div class="answer-options"><label><input type="radio" name="dia1" value="plays football"> plays football</label><label><input type="radio" name="dia1" value="goes swimming"> goes swimming</label><label><input type="radio" name="dia1" value="plays piano"> plays piano</label></div></div>
+<div class="q option-q" data-answer="once a week"><label>2. How often does Leo play?</label><div class="answer-options"><label><input type="radio" name="dia2" value="every day"> every day</label><label><input type="radio" name="dia2" value="once a week"> once a week</label><label><input type="radio" name="dia2" value="never"> never</label></div></div>
+<div class="q option-q" data-answer="art club"><label>3. Where does Mia go on Wednesdays?</label><div class="answer-options"><label><input type="radio" name="dia3" value="book club"> book club</label><label><input type="radio" name="dia3" value="art club"> art club</label><label><input type="radio" name="dia3" value="tennis club"> tennis club</label></div></div>
+<div class="btn-row"><button class="action" onclick="checkSelectGroup(this)">Check answers</button><button class="action secondary" onclick="revealGroup(this)">Reveal answers</button></div><div class="feedback"></div>
+</section>
+
+<section class="section" data-title="Grammar">
+<div class="section-header">Grammar</div><h2 class="section-title">Frequency adverbs</h2><p class="section-sub">Use frequency adverbs to say how often you do something.</p>
+<div class="card-muted"><p><strong>Order:</strong> always → usually → often → sometimes → never</p><p><strong>Position:</strong> I usually play football. / She often reads books. / We never go cycling on Monday.</p></div>
+<h3>Hobbies grammar drill</h3>
+<div class="q option-q" data-answer="I usually play tennis."><label>1. Choose the correct sentence.</label><div class="answer-options"><label><input type="radio" name="gram1" value="I play usually tennis."> I play usually tennis.</label><label><input type="radio" name="gram1" value="I usually play tennis."> I usually play tennis.</label><label><input type="radio" name="gram1" value="Usually I tennis play."> Usually I tennis play.</label></div></div>
+<div class="q option-q" data-answer="She often reads books."><label>2. Choose the correct sentence.</label><div class="answer-options"><label><input type="radio" name="gram2" value="She often reads books."> She often reads books.</label><label><input type="radio" name="gram2" value="She reads often books."> She reads often books.</label><label><input type="radio" name="gram2" value="She book often reads."> She book often reads.</label></div></div>
+<div class="q option-q" data-answer="How often do you go swimming?"><label>3. Choose the correct question.</label><div class="answer-options"><label><input type="radio" name="gram3" value="How often you go swimming?"> How often you go swimming?</label><label><input type="radio" name="gram3" value="How often do you go swimming?"> How often do you go swimming?</label><label><input type="radio" name="gram3" value="How you often swim go?"> How you often swim go?</label></div></div>
+<div class="q option-q" data-answer="I never play chess."><label>4. Choose the correct sentence.</label><div class="answer-options"><label><input type="radio" name="gram4" value="I never play chess."> I never play chess.</label><label><input type="radio" name="gram4" value="I play never chess."> I play never chess.</label><label><input type="radio" name="gram4" value="Never I chess play."> Never I chess play.</label></div></div>
+<div class="btn-row"><button class="action" onclick="checkSelectGroup(this)">Check answers</button><button class="action secondary" onclick="revealGroup(this)">Reveal answers</button></div><div class="feedback"></div>
+</section>
+
+<section class="section" data-title="Functional Language">
+<div class="section-header">Functional Language</div><h2 class="section-title">Useful hobby phrases</h2><p class="section-sub">Practise questions and answers about hobbies.</p>
+<table class="table"><tr><th>Function</th><th>Phrase</th></tr><tr><td>Ask about free time</td><td>What do you do in your free time?</td></tr><tr><td>Ask about frequency</td><td>How often do you do it?</td></tr><tr><td>Say you like something</td><td>I really like cooking.</td></tr><tr><td>Say you do not like something</td><td>I don’t really like running.</td></tr><tr><td>Show interest</td><td>That sounds fun.</td></tr><tr><td>Talk about trying a hobby</td><td>I’d like to try photography.</td></tr></table>
+<h3>Choose the best phrase</h3>
+<div class="q option-q" data-answer="What do you do in your free time?"><label>1. You want to ask about hobbies.</label><div class="answer-options"><label><input type="radio" name="func1" value="What do you do in your free time?"> What do you do in your free time?</label><label><input type="radio" name="func1" value="Where is the bus?"> Where is the bus?</label><label><input type="radio" name="func1" value="Do you have money?"> Do you have money?</label></div></div>
+<div class="q option-q" data-answer="That sounds fun."><label>2. You want to show interest.</label><div class="answer-options"><label><input type="radio" name="func2" value="That sounds fun."> That sounds fun.</label><label><input type="radio" name="func2" value="I am a hobby."> I am a hobby.</label><label><input type="radio" name="func2" value="Stop the hobby."> Stop the hobby.</label></div></div>
+<div class="q option-q" data-answer="How often do you do it?"><label>3. You want to ask about frequency.</label><div class="answer-options"><label><input type="radio" name="func3" value="How often do you do it?"> How often do you do it?</label><label><input type="radio" name="func3" value="How many hobby is it?"> How many hobby is it?</label><label><input type="radio" name="func3" value="Where often you do?"> Where often you do?</label></div></div>
+<div class="btn-row"><button class="action" onclick="checkSelectGroup(this)">Check answers</button><button class="action secondary" onclick="revealGroup(this)">Reveal answers</button></div><div class="feedback"></div>
+</section>
+
+<section class="section" data-title="Speaking">
+<div class="section-header">Speaking</div><h2 class="section-title">Hobby speaking cards</h2><p class="section-sub">Choose a card. Ask and answer questions with a partner.</p>
+<div class="grid-2">
+<div class="role-card"><strong>Card A: Sporty person</strong><p>You love football and cycling. You usually exercise at the weekend.</p><p><strong>Ask:</strong> What sport do you like?</p></div>
+<div class="role-card"><strong>Card B: Creative person</strong><p>You enjoy painting and photography. You go to an art club once a week.</p><p><strong>Ask:</strong> Would you like to try painting?</p></div>
+<div class="role-card"><strong>Card C: Relaxed person</strong><p>You like reading, watching films and cooking at home.</p><p><strong>Ask:</strong> What do you do to relax?</p></div>
+<div class="role-card"><strong>Card D: Music fan</strong><p>You play guitar and listen to music every day.</p><p><strong>Ask:</strong> What kind of music do you like?</p></div>
+</div>
+<div class="card-muted"><h3>Conversation checklist</h3><ul><li>Ask about hobbies.</li><li>Ask how often your partner does the hobby.</li><li>Say if you like or do not like the hobby.</li><li>Show interest with one useful phrase.</li><li>Ask one follow-up question.</li></ul></div>
+</section>
+
+<section class="section" data-title="Review">
+<div class="section-header">Review</div><h2 class="section-title">Final review</h2><p class="section-sub">Check the key language from the lesson.</p>
+<div class="q option-q" data-answer="What do you do in your free time?"><label>1. Choose the best question about hobbies.</label><div class="answer-options"><label><input type="radio" name="rev1" value="What do you do in your free time?"> What do you do in your free time?</label><label><input type="radio" name="rev1" value="What is the deadline?"> What is the deadline?</label><label><input type="radio" name="rev1" value="Where is the receipt?"> Where is the receipt?</label></div></div>
+<div class="q option-q" data-answer="I usually go cycling."><label>2. Choose the correct sentence.</label><div class="answer-options"><label><input type="radio" name="rev2" value="I go usually cycling."> I go usually cycling.</label><label><input type="radio" name="rev2" value="I usually go cycling."> I usually go cycling.</label><label><input type="radio" name="rev2" value="I cycling usually go."> I cycling usually go.</label></div></div>
+<div class="q option-q" data-answer="That sounds fun."><label>3. Choose the phrase that shows interest.</label><div class="answer-options"><label><input type="radio" name="rev3" value="That sounds fun."> That sounds fun.</label><label><input type="radio" name="rev3" value="I am not table."> I am not table.</label><label><input type="radio" name="rev3" value="No hobby now."> No hobby now.</label></div></div>
+<div class="btn-row"><button class="action" onclick="checkSelectGroup(this)">Check answers</button><button class="action secondary" onclick="revealGroup(this)">Reveal answers</button></div><div class="feedback"></div>
+</section>
+
+</section></main>
+<footer class="footer">ESL Connect - <a href="mailto:englishconnecter@gmail.com">Contact Us</a></footer>
+<script>
+const sections=[...document.querySelectorAll('.section')],nav=document.getElementById('navButtons'),fill=document.getElementById('progressFill');let current=0;
+sections.forEach((sec,i)=>{const b=document.createElement('button');b.className='shortcut'+(i===0?' active':'');b.textContent=sec.dataset.title;b.onclick=()=>showSection(i);nav.appendChild(b)});
+function showSection(i){current=i;sections.forEach((s,idx)=>s.classList.toggle('active',idx===i));document.querySelectorAll('.shortcut').forEach((b,idx)=>b.classList.toggle('active',idx===i));fill.style.width=((i+1)/sections.length*100)+'%';window.scrollTo({top:0,behavior:'smooth'})}showSection(0);
+function checkSelectGroup(btn){const container=btn.closest('.section');const qs=[...container.querySelectorAll('.option-q')];let score=0;qs.forEach(q=>{q.classList.remove('correct','incorrect');const correct=q.dataset.answer;q.querySelectorAll('.answer-options label').forEach(label=>label.classList.remove('option-correct','option-wrong'));const checked=q.querySelector('input[type=radio]:checked');if(checked){const lab=checked.closest('label');if(checked.value===correct){score++;q.classList.add('correct');lab.classList.add('option-correct')}else{q.classList.add('incorrect');lab.classList.add('option-wrong')}}else{q.classList.add('incorrect')}});const fb=container.querySelector('.feedback');if(fb){fb.textContent=`${score}/${qs.length} correct.`;fb.className='feedback '+(score===qs.length?'ok':'bad')}}
+function revealGroup(btn){const container=btn.closest('.section');const qs=[...container.querySelectorAll('.option-q')];qs.forEach(q=>{q.classList.remove('incorrect');q.classList.add('correct');const correct=q.dataset.answer;q.querySelectorAll('.answer-options label').forEach(label=>{label.classList.remove('option-correct','option-wrong');const input=label.querySelector('input[type=radio]');if(input&&input.value===correct){label.classList.add('option-correct')}})});const fb=container.querySelector('.feedback');if(fb){fb.textContent='Correct options are highlighted in green.';fb.className='feedback ok'}}
+function enableInstantOptionFeedback(){document.querySelectorAll('.option-q').forEach(q=>{const correct=q.dataset.answer;q.querySelectorAll('.answer-options label').forEach(label=>{const input=label.querySelector('input[type=radio]');if(!input)return;input.addEventListener('change',()=>{q.querySelectorAll('.answer-options label').forEach(l=>l.classList.remove('option-correct','option-wrong'));q.classList.remove('correct','incorrect');if(input.value===correct){label.classList.add('option-correct');q.classList.add('correct')}else{label.classList.add('option-wrong');q.classList.add('incorrect')}})})})}
+function dragAnswer(ev){ev.dataTransfer.setData('text/plain',ev.target.dataset.value)}function allowDrop(ev){ev.preventDefault()}
+function dropAnswer(ev){ev.preventDefault();const zone=ev.currentTarget,val=ev.dataTransfer.getData('text/plain');zone.dataset.value=val;zone.textContent=val;zone.classList.add('filled');const q=zone.closest('.drag-q');q.classList.remove('correct','incorrect');if(val===q.dataset.answer){q.classList.add('correct');zone.style.background='var(--green-soft)';zone.style.borderColor='var(--green)';zone.style.color='#145c3d'}else{q.classList.add('incorrect');zone.style.background='var(--red-soft)';zone.style.borderColor='var(--red)';zone.style.color='#7a1b12'}}
+function checkDragGroup(btn){const container=btn.closest('.section'),qs=[...container.querySelectorAll('.drag-q')];let score=0;qs.forEach(q=>{const zone=q.querySelector('.drop-zone');q.classList.remove('correct','incorrect');if(zone.dataset.value===q.dataset.answer){score++;q.classList.add('correct');zone.style.background='var(--green-soft)';zone.style.borderColor='var(--green)';zone.style.color='#145c3d'}else{q.classList.add('incorrect');zone.style.background='var(--red-soft)';zone.style.borderColor='var(--red)';zone.style.color='#7a1b12'}});const fb=container.querySelector('.feedback');if(fb){fb.textContent=`${score}/${qs.length} correct.`;fb.className='feedback '+(score===qs.length?'ok':'bad')}}
+function revealDragAnswers(btn){const container=btn.closest('.section');container.querySelectorAll('.drag-q').forEach(q=>{const zone=q.querySelector('.drop-zone');q.classList.remove('incorrect');q.classList.add('correct');zone.dataset.value=q.dataset.answer;zone.textContent=q.dataset.answer;zone.classList.add('filled');zone.style.background='var(--green-soft)';zone.style.borderColor='var(--green)';zone.style.color='#145c3d'});const fb=container.querySelector('.feedback');if(fb){fb.textContent='Correct answers are highlighted in green.';fb.className='feedback ok'}}
+function resetDragGroup(btn){const container=btn.closest('.section');container.querySelectorAll('.drag-q').forEach(q=>{q.classList.remove('correct','incorrect');const zone=q.querySelector('.drop-zone');zone.textContent='Drop answer here';zone.dataset.value='';zone.classList.remove('filled');zone.style.background='';zone.style.borderColor='';zone.style.color=''});const fb=container.querySelector('.feedback');if(fb){fb.textContent='';fb.className='feedback'}}
+enableInstantOptionFeedback();
+</script>
+</body></html>
