@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<!-- saved from url=(0090)file:///Users/gretavandeacr/Downloads/esl_connect_people_walker_a2_mobile_vocab_clean.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ESL CONNECT | The People Walker A2</title><style>
+:root{--blue:#0b2f5b;--blue2:#114f95;--yellow:#f4d547;--bg:#f4f7fb;--text:#1e2a38;--muted:#5f7085;--line:#d8e0ea;--good:#1b8f3d;--bad:#c43d34}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.55}.wrapper{max-width:1180px;margin:0 auto;background:#fff;min-height:100vh;box-shadow:0 10px 30px rgba(0,0,0,.08)}
+header{background:var(--blue);color:#fff;padding:18px 24px;display:flex;gap:18px;align-items:center}.logo{width:84px;height:84px;background:#fff;color:var(--blue);border:3px solid #fff5b7;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:800;text-align:center;line-height:1.05;text-decoration:none;flex:0 0 auto}header h1{margin:0 0 8px;font-size:30px}header p{margin:0;opacity:.95}
+nav{display:flex;flex-wrap:wrap;gap:8px;padding:14px 18px;background:#eaf0f8;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}nav button{border:none;background:var(--blue2);color:white;padding:10px 14px;border-radius:8px;cursor:pointer;font-size:14px;font-weight:700}nav button.active,nav button:hover{background:var(--yellow);color:#18263a}
+.page{display:none;padding:24px}.page.active{display:block}.grid{display:grid;grid-template-columns:1.05fr .95fr;gap:22px}@media(max-width:900px){.grid,.dragArea,.role{grid-template-columns:1fr!important}}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:18px;box-shadow:0 3px 12px rgba(15,47,106,.06)}.card h2,.card h3{margin-top:0;color:var(--blue)}.small{color:var(--muted);font-size:14px}.timeTag{display:inline-block;background:var(--blue2);color:#fff;border-radius:999px;padding:3px 9px;margin-right:9px;font-size:12px}
+.videoImg,.heroImg{display:block;width:100%;border-radius:14px;border:1px solid var(--line);box-shadow:0 6px 14px rgba(0,0,0,.08)}.heroImg{height:330px;object-fit:cover}.btn{display:inline-block;margin-top:10px;background:var(--blue2);color:white;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:700;border:none;cursor:pointer}.btn:hover{background:var(--yellow);color:#18263a}
+.reveal{border:1px solid var(--line);border-radius:12px;padding:15px;margin:14px 0;background:#fff;cursor:pointer}.reveal:hover{background:#f8fbff}.reveal .answer{display:none;margin-top:10px;padding:12px;border-left:4px solid var(--yellow);background:#fffbe6;border-radius:8px}.reveal.open .answer{display:block}.reveal strong{color:var(--blue)}
+.dragArea{display:grid;grid-template-columns:1fr 300px;gap:18px}.dropzone{display:inline-block;min-width:150px;min-height:34px;border:2px dashed #9bb4d6;border-radius:8px;background:#fff;padding:5px 10px;vertical-align:middle}.dropzone.filled{border-style:solid;background:#eef6ff;font-weight:700}.dropzone.correct{border-color:#167a46;background:#f0fdf4;color:#14532d}.dropzone.incorrect{border-color:#b91c1c;background:#fef2f2;color:#7f1d1d}.matchDrop{display:block;min-height:42px;margin-top:8px}.matchSentence{margin:12px 0;padding:12px;border:1px solid var(--line);border-radius:10px;background:#fff}.matchSentence strong{color:var(--blue)}
+.draggable{background:#e8f0fb;border:1px solid #c7d7ee;border-radius:999px;padding:8px 11px;font-weight:700;color:#0b2f5b;cursor:grab;display:inline-block;margin:5px}.dragBank{background:#f8fafc;border:1px solid #dbe4f0;border-radius:12px;padding:12px}.table{width:100%;border-collapse:collapse}.table th,.table td{border:1px solid var(--line);padding:10px;text-align:left;vertical-align:top}.table th{background:#eef4fb}.role{display:grid;grid-template-columns:1fr 1fr;gap:16px}.person{background:#f8fafc;border:1px solid #dbe4f0;border-radius:12px;padding:16px}.prompt{background:#f0f7ff;border:1px solid #cce1ff;border-radius:10px;padding:14px;margin:12px 0}.checkline{margin:12px 0;padding:12px;border:1px solid var(--line);border-radius:10px;background:#fff}.checkline input{width:100%;padding:10px;border:1px solid #c8d5e6;border-radius:8px;margin-top:8px}.result{font-weight:700;margin-top:8px;min-height:22px}.correctText{color:var(--good)}.incorrectText{color:var(--bad)}.controls{display:flex;justify-content:space-between;gap:12px;margin-top:16px}.controls button{border:none;background:var(--blue2);color:#fff;padding:11px 16px;border-radius:8px;cursor:pointer}.controls button:hover{background:var(--yellow);color:#18263a}footer{padding:18px 24px 28px;color:var(--muted);text-align:center}
+
+/* Mobile-friendly Vocabulary Review */
+.vocabTableWrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.vocabReview .table{min-width:680px}
+.vocabReview .dragArea{grid-template-columns:minmax(0,1fr) minmax(220px,300px)}
+.vocabReview .dragBank{max-width:100%}
+.vocabReview .draggable{white-space:normal;max-width:100%;line-height:1.35}
+.vocabReview p{overflow-wrap:anywhere}
+
+@media(max-width:700px){
+  .page{padding:14px}
+  .card{padding:15px}
+  .vocabReview .table,
+  .vocabReview .table tbody,
+  .vocabReview .table tr,
+  .vocabReview .table th,
+  .vocabReview .table td{
+    display:block;
+    width:100%;
+  }
+  .vocabReview .table{
+    min-width:0;
+    border:0;
+  }
+  .vocabReview .table tr:first-child{
+    display:none;
+  }
+  .vocabReview .table tr{
+    margin:0 0 12px;
+    border:1px solid var(--line);
+    border-radius:12px;
+    background:#fff;
+    overflow:hidden;
+  }
+  .vocabReview .table td{
+    border:0;
+    border-bottom:1px solid var(--line);
+    padding:10px 12px;
+  }
+  .vocabReview .table td:last-child{
+    border-bottom:0;
+  }
+  .vocabReview .table td:nth-child(1)::before{
+    content:"Word / phrase";
+    display:block;
+    color:var(--muted);
+    font-size:12px;
+    font-weight:700;
+    text-transform:uppercase;
+    margin-bottom:3px;
+  }
+  .vocabReview .table td:nth-child(2)::before{
+    content:"Meaning";
+    display:block;
+    color:var(--muted);
+    font-size:12px;
+    font-weight:700;
+    text-transform:uppercase;
+    margin-bottom:3px;
+  }
+  .vocabReview .table td:nth-child(3)::before{
+    content:"Example";
+    display:block;
+    color:var(--muted);
+    font-size:12px;
+    font-weight:700;
+    text-transform:uppercase;
+    margin-bottom:3px;
+  }
+  .vocabReview .dragArea{
+    display:grid;
+    grid-template-columns:1fr!important;
+    gap:12px;
+  }
+  .vocabReview .dropzone{
+    display:block;
+    width:100%;
+    min-width:0;
+    margin-top:6px;
+    padding:8px 10px;
+  }
+  .vocabReview .dragBank{
+    position:static;
+    width:100%;
+  }
+  .vocabReview .draggable{
+    display:inline-block;
+    max-width:100%;
+    margin:4px;
+    padding:8px 10px;
+  }
+}
+
+</style></head><body><div class="wrapper"><header><a class="logo" href="https://www.eslconnect.net/" target="_blank">ESL<br>CONNECT</a><div><h1>The People Walker</h1><p>A2 video lesson on walking, companionship and unusual jobs.</p><p class="small"><a style="color:#fff2a8" href="https://www.youtube.com/watch?v=Znx_oZWj1MQ" target="_blank">Open video on YouTube</a></p></div></header><nav id="nav"><button class="">Start</button><button>Prep</button><button>Watch the Video</button><button>Comprehension</button><button class="active">Vocabulary Review</button><button>Grammar</button><button>Discussion</button><button>Role Play</button></nav>
+<section class="page" data-title="Start">
+<div class="grid"><div class="card"><h2>Lesson Overview</h2>
+<p>Students watch a short video about Chuck McCarthy, a man in Hollywood who walks with people as a job. The lesson practises A2 language for jobs, exercise, companionship and simple present / present perfect.</p>
+<h3>Before you watch</h3><ol><li>Do you like walking? Why or why not?</li><li>Would you pay someone to walk with you?</li><li>Is walking good for your body and your mind?</li></ol>
+</div><div class="card"><h2>The People Walker</h2><img class="heroImg" src="./ESL CONNECT _ The People Walker A2_files/hqdefault.jpg" alt="Screen grab from the video"><p><a class="btn" href="https://www.youtube.com/watch?v=Znx_oZWj1MQ" target="_blank">Open video on YouTube</a></p></div></div>
+<div class="controls"><span></span><button onclick="nextPage()">Next</button></div></section>
+<section class="page" data-title="Prep"><div class="card"><h2>Prep</h2><p class="small">Drag the correct ending into each gap.</p><div class="dragArea"><div><div class="matchSentence"><strong>1.</strong> If you meet up with someone,... <span class="dropzone matchDrop" data-ans="you meet them by arrangement."></span></div><div class="matchSentence"><strong>2.</strong> If something is silly,... <span class="dropzone matchDrop" data-ans="it seems funny or not serious."></span></div><div class="matchSentence"><strong>3.</strong> If something is invaluable,... <span class="dropzone matchDrop" data-ans="it is extremely useful or important."></span></div><div class="matchSentence"><strong>4.</strong> If something broadens your horizons,... <span class="dropzone matchDrop" data-ans="it helps you learn or experience more."></span></div><div class="matchSentence"><strong>5.</strong> If something is therapeutic,... <span class="dropzone matchDrop" data-ans="it helps your mind or body feel better."></span></div><div class="matchSentence"><strong>6.</strong> If something is a no-brainer,... <span class="dropzone matchDrop" data-ans="it is an easy and obvious choice."></span></div></div><div class="dragBank"><h3>Mixed answer options</h3><span class="draggable" draggable="true">you meet them by arrangement.</span><span class="draggable" draggable="true">it seems funny or not serious.</span><span class="draggable" draggable="true">it is extremely useful or important.</span><span class="draggable" draggable="true">it helps you learn or experience more.</span><span class="draggable" draggable="true">it helps your mind or body feel better.</span><span class="draggable" draggable="true">it is an easy and obvious choice.</span></div></div></div><div class="controls"><button onclick="prevPage()">Previous</button><button onclick="nextPage()">Next</button></div></section><section class="page" data-title="Watch the Video"><div class="card"><h2>Watch the Video</h2><p>Watch the full video once. Focus on Chuck’s unusual job and why people enjoy walking with him.</p><div class="prompt"><strong>Focus:</strong> I live in..., I’ve been..., I meet up with people, walking is exercise, talking has therapeutic value.</div><a href="https://www.youtube.com/watch?v=Znx_oZWj1MQ" target="_blank"><img class="videoImg" src="./ESL CONNECT _ The People Walker A2_files/hqdefault.jpg" alt="Screen grab from the video"></a><p><a class="btn" href="https://www.youtube.com/watch?v=Znx_oZWj1MQ" target="_blank">Open full video</a></p></div><div class="controls"><button onclick="prevPage()">Previous</button><button onclick="nextPage()">Next</button></div></section><section class="page" data-title="Comprehension"><div class="card"><h2>Comprehension</h2><p class="small">Click each question to reveal the answer. Each question is synced to the video time.</p><div class="reveal"><strong><span class="timeTag">0:00</span>What is the man’s name?</strong><div class="answer">His name is Chuck McCarthy.</div></div><div class="reveal"><strong><span class="timeTag">0:02</span>Where does Chuck live?</strong><div class="answer">He lives in Hollywood, California.</div></div><div class="reveal"><strong><span class="timeTag">0:07</span>What is Chuck’s unusual job or business?</strong><div class="answer">He is the People Walker. He meets up with people and walks with them.</div></div><div class="reveal"><strong><span class="timeTag">0:16</span>What two things are at the heart of the business?</strong><div class="answer">Exercise and companionship are at the heart of it.</div></div><div class="reveal"><strong><span class="timeTag">0:24</span>Why does one person like walking with Chuck?</strong><div class="answer">Because it broadens her horizons.</div></div><div class="reveal"><strong><span class="timeTag">0:47</span>What benefits has Chuck got from walking?</strong><div class="answer">He has lost weight and he gets to meet new people.</div></div></div>
+<div class="card"><h3>Vocabulary from the Video</h3><div class="dragArea"><div><p>I live in Hollywood, <span class="dropzone" data-ans="California"></span>.</p><p>I’m the people <span class="dropzone" data-ans="Walker"></span>.</p><p>I meet up with people and I <span class="dropzone" data-ans="walk"></span> with them.</p><p>Some people try to write it off as <span class="dropzone" data-ans="silly"></span>.</p><p>The heart of it is exercise and <span class="dropzone" data-ans="companionship"></span>.</p><p>It broadens my <span class="dropzone" data-ans="horizons"></span>.</p><p>In a way, it’s <span class="dropzone" data-ans="therapeutic"></span>.</p><p>Walking is amazing <span class="dropzone" data-ans="exercise"></span>.</p></div><div class="dragBank"><h3>Mixed options</h3><span class="draggable" draggable="true">silly</span><span class="draggable" draggable="true">companionship</span><span class="draggable" draggable="true">exercise</span><span class="draggable" draggable="true">walk</span><span class="draggable" draggable="true">California</span><span class="draggable" draggable="true">Walker</span><span class="draggable" draggable="true">therapeutic</span><span class="draggable" draggable="true">horizons</span></div></div></div>
+<div class="controls"><button onclick="prevPage()">Previous</button><button onclick="nextPage()">Next</button></div></section><section class="page vocabReview active" data-title="Vocabulary Review"><div class="card"><h2>Vocabulary Review</h2><div class="vocabTableWrap"><table class="table"><tbody><tr><th>Word / phrase</th><th>Meaning</th><th>Example</th></tr><tr><td>people walker</td><td>a person who walks with other people as a service</td><td>Chuck is the People Walker.</td></tr><tr><td>meet up with</td><td>meet someone by arrangement</td><td>I meet up with people.</td></tr><tr><td>write it off</td><td>decide something is not important or serious</td><td>Some people write it off as silly.</td></tr><tr><td>silly</td><td>funny or not serious</td><td>Some people think the idea is silly.</td></tr><tr><td>companionship</td><td>the feeling of being with another person</td><td>Walking gives people companionship.</td></tr><tr><td>invaluable</td><td>extremely useful or important</td><td>Exercise and companionship are invaluable.</td></tr><tr><td>broaden your horizons</td><td>help you learn or experience more</td><td>Walking with Chuck broadens my horizons.</td></tr><tr><td>therapeutic</td><td>good for your mind or body</td><td>Talking to someone can be therapeutic.</td></tr><tr><td>opportunity</td><td>a chance to do something</td><td>It gives me an opportunity to talk.</td></tr><tr><td>no-brainer</td><td>an easy and obvious choice</td><td>Walking and talking together is a no-brainer.</td></tr></tbody></table></div></div>
+<div class="card"><h3>Useful Collocations</h3><div class="dragArea"><div><p>meet up with <span class="dropzone" data-ans="people"></span></p><p>go for a <span class="dropzone" data-ans="walk"></span></p><p>lose <span class="dropzone" data-ans="weight"></span></p><p>broaden your <span class="dropzone" data-ans="horizons"></span></p><p>therapeutic <span class="dropzone" data-ans="value"></span></p><p>amazing <span class="dropzone" data-ans="exercise"></span></p></div><div class="dragBank"><h3>Mixed options</h3><span class="draggable" draggable="true">walk</span><span class="draggable" draggable="true">exercise</span><span class="draggable" draggable="true">horizons</span><span class="draggable" draggable="true">value</span><span class="draggable" draggable="true">people</span><span class="draggable" draggable="true">weight</span></div></div></div>
+<div class="card"><h3>Phrasal Verb Questions</h3><div class="dragArea"><div><p>Who do you like to meet <span class="dropzone" data-ans="up"></span> with?</p><p>What idea do some people write <span class="dropzone" data-ans="off"></span> as silly?</p><p>How often do you go <span class="dropzone" data-ans="out"></span> for a walk?</p><p>What activity helps you calm <span class="dropzone" data-ans="down"></span>?</p><p>What can you get <span class="dropzone" data-ans="out"></span> of walking with someone?</p></div><div class="dragBank"><h3>Mixed options</h3><span class="draggable" draggable="true">out</span><span class="draggable" draggable="true">off</span><span class="draggable" draggable="true">down</span><span class="draggable" draggable="true">up</span><span class="draggable" draggable="true">out</span></div></div></div>
+<div class="card"><div class="prompt"><strong>Speaking extension:</strong> Answer the five phrasal verb questions with a partner.</div></div><div class="controls"><button onclick="prevPage()">Previous</button><button onclick="nextPage()">Next</button></div></section><section class="page" data-title="Grammar"><div class="card"><h2>A2 Grammar: Present Simple vs Present Continuous</h2>
+<p>Use the <strong>present simple</strong> for routines, facts and things that are generally true. Use the <strong>present continuous</strong> for actions happening now or temporary situations.</p>
+<table class="table">
+<tbody><tr><th>Tense</th><th>Use</th><th>Example from the topic</th></tr>
+<tr><td>Present simple</td><td>facts and routines</td><td>I live in Hollywood. / I meet up with people.</td></tr>
+<tr><td>Present simple</td><td>general truths</td><td>Walking is amazing exercise.</td></tr>
+<tr><td>Present continuous</td><td>actions happening now</td><td>I am walking with a customer now.</td></tr>
+<tr><td>Present continuous</td><td>temporary situations</td><td>Today, I am meeting a new client.</td></tr>
+</tbody></table></div>
+<div class="card"><h3>Grammar Exercise 1: Choose the correct verb form</h3><div class="dragArea"><div><p>Chuck <span class="dropzone" data-ans="lives"></span> in Hollywood.</p><p>He usually <span class="dropzone" data-ans="meets"></span> people for walks.</p><p>Today, he is <span class="dropzone" data-ans="walking"></span> with a customer.</p><p>Walking <span class="dropzone" data-ans="is"></span> amazing exercise.</p><p>Right now, they are <span class="dropzone" data-ans="talking"></span> about the city.</p><p>Many people <span class="dropzone" data-ans="like"></span> walking with Chuck.</p></div><div class="dragBank"><h3>Mixed options</h3><span class="draggable" draggable="true">walking</span><span class="draggable" draggable="true">lives</span><span class="draggable" draggable="true">talking</span><span class="draggable" draggable="true">meets</span><span class="draggable" draggable="true">like</span><span class="draggable" draggable="true">is</span></div></div></div>
+<div class="card"><h3>Error Correction</h3>
+<div class="reveal"><strong><span class="timeTag"></span>Chuck is living in Hollywood. He lives there permanently.</strong><div class="answer">Chuck lives in Hollywood.</div></div>
+<div class="reveal"><strong><span class="timeTag"></span>He meet up with people every week.</strong><div class="answer">He meets up with people every week.</div></div>
+<div class="reveal"><strong><span class="timeTag"></span>Right now, he walks with a customer.</strong><div class="answer">Right now, he is walking with a customer.</div></div>
+<div class="reveal"><strong><span class="timeTag"></span>They are talk about life during the walk.</strong><div class="answer">They are talking about life during the walk.</div></div>
+<div class="reveal"><strong><span class="timeTag"></span>Walking are amazing exercise.</strong><div class="answer">Walking is amazing exercise.</div></div>
+</div>
+<div class="card"><h3>Grammar Exercise 3: Write your own answers</h3>
+<div class="checkline"><strong>Use the present simple.</strong><br>Where do you live?<input data-contains="i live" placeholder="Write your sentence here"><div class="result"></div></div>
+<div class="checkline"><strong>Use the present simple.</strong><br>What do you usually do for exercise?<input data-contains="i usually" placeholder="Write your sentence here"><div class="result"></div></div>
+<div class="checkline"><strong>Use the present continuous.</strong><br>What are you doing now?<input data-contains="i am|ing" placeholder="Write your sentence here"><div class="result"></div></div>
+<div class="checkline"><strong>Use the present continuous.</strong><br>What is Chuck doing in the video?<input data-contains="he is|walking" placeholder="Write your sentence here"><div class="result"></div></div>
+<button class="btn" onclick="checkOpenAnswers()">Check answers</button></div>
+<div class="controls"><button onclick="prevPage()">Previous</button><button onclick="nextPage()">Next</button></div></section><section class="page" data-title="Discussion"><div class="card"><h2>Discussion</h2><ol><li>Would you like to walk with a People Walker?</li><li>Why do some people feel lonely in big cities?</li><li>Is walking better alone or with another person?</li><li>Can talking to someone be therapeutic?</li><li>What activities broaden your horizons?</li><li>Do you think this business idea is silly or clever?</li><li>What unusual job would you like to try?</li></ol></div><div class="card"><h3>Useful Language</h3><table class="table"><tbody><tr><th>Giving opinions</th><th>Explaining benefits</th><th>Disagreeing politely</th></tr><tr><td>I think...<br>In my opinion...<br>For me...</td><td>It is good for...<br>It helps people...<br>It gives people...</td><td>I see your point, but...<br>I’m not sure.<br>I don’t really agree.</td></tr></tbody></table></div><div class="controls"><button onclick="prevPage()">Previous</button><button onclick="nextPage()">Next</button></div></section><section class="page" data-title="Role Play"><div class="card"><h2>Role Play: The People Walker</h2><div class="prompt"><strong>Situation:</strong> One student is a People Walker. The other student is interested in booking a walk.</div><div class="role"><div class="person"><h3>Student A: People Walker</h3><p>Explain your service. Talk about exercise, companionship and why walking is useful.</p></div><div class="person"><h3>Student B: Customer</h3><p>Ask questions about the service, the price, where you walk and why it helps people.</p></div></div><h3>Challenge</h3><p>Use at least five phrases: <strong>meet up with, go for a walk, exercise, companionship, therapeutic, no-brainer.</strong></p></div><div class="controls"><button onclick="prevPage()">Previous</button><span></span></div></section><footer>ESL CONNECT • Interactive video lesson • A2</footer></div><script>
+const pages=[...document.querySelectorAll('.page')],nav=document.getElementById('nav');pages.forEach((p,i)=>{let b=document.createElement('button');b.textContent=p.dataset.title;if(i==0)b.classList.add('active');b.onclick=()=>showPage(i);nav.appendChild(b)});
+function showPage(n){pages.forEach((p,i)=>{p.classList.toggle('active',i==n);nav.children[i].classList.toggle('active',i==n)});scrollTo({top:0,behavior:'smooth'})}
+function nextPage(){let c=pages.findIndex(p=>p.classList.contains('active'));if(c<pages.length-1)showPage(c+1)}function prevPage(){let c=pages.findIndex(p=>p.classList.contains('active'));if(c>0)showPage(c-1)}
+document.querySelectorAll('.reveal').forEach(box=>box.addEventListener('click',()=>box.classList.toggle('open')));let draggedWord=null;document.addEventListener('dragstart',e=>{if(e.target.classList.contains('draggable'))draggedWord=e.target.textContent.trim()});document.addEventListener('dragover',e=>{if(e.target.classList.contains('dropzone'))e.preventDefault()});document.addEventListener('drop',e=>{if(e.target.classList.contains('dropzone')){e.preventDefault();e.target.textContent=draggedWord||'';e.target.classList.add('filled');let ok=e.target.textContent.trim()===e.target.dataset.ans;e.target.classList.toggle('correct',ok);e.target.classList.toggle('incorrect',!ok)}});function checkOpenAnswers(){document.querySelectorAll('.checkline').forEach(line=>{const input=line.querySelector('input');const result=line.querySelector('.result');const value=input.value.toLowerCase();const checks=input.dataset.contains.split('|');const ok=checks.every(part=>value.includes(part.toLowerCase()));result.textContent=ok?'Good attempt.':'Try again.';result.className=ok?'result correctText':'result incorrectText'})}showPage(0);
+</script></body></html>
